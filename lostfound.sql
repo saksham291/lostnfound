@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2020 at 07:52 PM
+-- Generation Time: Mar 24, 2020 at 05:08 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -37,7 +37,7 @@ CREATE TABLE `items` (
   `date-time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `image` varchar(100) NOT NULL,
   `lost_or_found` int(10) NOT NULL,
-  `person_name` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `contact_num` varchar(25) NOT NULL,
   `contact_email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -46,9 +46,9 @@ CREATE TABLE `items` (
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`id`, `item_name`, `item_desc`, `item_category`, `location`, `date-time`, `image`, `lost_or_found`, `person_name`, `contact_num`, `contact_email`) VALUES
-(1, 'One Plus 6', 'black colour phone with avengers wallpaper and black cover.', 'mobile', 'mess, castle ena', '2020-03-22 18:32:59', 'images/items/1.jpg', 0, 'Saksham Bhushan', '9876543210', 'saksham291@gmail.com'),
-(2, 'Key Bunch', 'bunch of 6 keys, with a minion keyring.', 'key', 'room number B107, acad block', '2020-03-22 18:37:09', 'images/items/2.jpg', 1, 'Harry Potter', '9876543211', 'harry@potter.com');
+INSERT INTO `items` (`id`, `item_name`, `item_desc`, `item_category`, `location`, `date-time`, `image`, `lost_or_found`, `username`, `contact_num`, `contact_email`) VALUES
+(1, 'One Plus 6', 'black colour phone with avengers wallpaper and black cover.', 'mobile', 'mess, castle ena', '2020-03-24 16:02:16', 'images/items/1.jpg', 0, 'sakshamb', '9876543210', 'saksham291@gmail.com'),
+(2, 'Key Bunch', 'bunch of 6 keys, with a minion keyring.', 'key', 'room number B107, acad block', '2020-03-24 16:02:35', 'images/items/2.jpg', 1, 'harryp', '9876543211', 'harry@potter.com');
 
 -- --------------------------------------------------------
 
@@ -84,6 +84,7 @@ INSERT INTO `item_category` (`category`) VALUES
 CREATE TABLE `users` (
   `ID` varchar(10) NOT NULL,
   `name` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -92,10 +93,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`ID`, `name`, `email`, `password`) VALUES
-('11840980', 'Saksham Bhushan', 'saksham291@gmail.com', '1234'),
-('11940010', 'Harry Potter', 'harry@potter.com', '1234'),
-('11840990', 'Iron Man', 'ironman@gmail.com', '1234');
+INSERT INTO `users` (`ID`, `name`, `username`, `email`, `password`) VALUES
+('11840980', 'Saksham Bhushan', 'sakshamb', 'saksham291@gmail.com', '1234'),
+('11940010', 'Harry Potter', 'harryp', 'harry@potter.com', '1234'),
+('11840990', 'Iron Man', 'ironm', 'ironman@gmail.com', '1234');
 
 --
 -- Indexes for dumped tables
